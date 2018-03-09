@@ -1,0 +1,331 @@
+/*
+* Hoja de estilos MFR (Mobile First Responsive)
+* Cristhian Coronel
+*/
+/*****************************opciones inicales********************************/
+
+* { /*todos los tags*/
+    box-sizing: border-box;
+}
+div.fly {
+    position: absolute;
+    opacity: 0.6;
+    right: 10px;
+}
+div.fly a {
+    text-decoration: none;
+    float: right;
+    padding: 5px;
+}
+div.fly a.option{
+    color: black;
+    text-align: center;
+}
+div.fly a.sub-option{
+    color: black;
+    text-align: center;
+    display: none;
+}
+div.fly:hover a.sub-option {
+    display:block;
+}
+div.fly a:hover{
+    background-color: darkseagreen;
+    color: white;
+}
+div.encabezado{
+    background-color: transparent;
+    text-align:center;
+    margin: 0px;
+    padding: 0px;
+}
+div.encabezado img {
+    max-width: 100%;
+    max-height: 2.5cm;
+}
+
+/***************************************Primero mobiles**************************/
+/* Tamaño Celular */
+[class*="col-"] { /*cualquier clase cuyo nombre empiece por 'col-'*/
+    width: 100%;
+}
+div.navegacion {
+    position: sticky;
+    top: 0px;
+}
+div.navegacion ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    background-color: #f1f1f1;
+}
+div.navegacion ul li a {
+    text-decoration: none;
+    color: #000;
+    padding: 8px;
+    text-align: center;
+    display: block;
+}
+div.navegacion ul li a.active {
+    background-color: cadetblue;
+    color: white;
+}
+div.navegacion ul li.sub-menu a:hover{
+    background-color: darkseagreen;
+    color: white;
+}
+div.navegacion ul li.sub-menu a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+div.navegacion ul li.sub-menu div.sub-elemento{
+    display: none;
+    background-color: darkseagreen;
+    color: black;
+    opacity: 0.8;
+}
+div.navegacion ul .sub-menu:hover .sub-elemento{
+    display:block;
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+}
+@media only screen and (min-width: 600px) {
+    /* Tamaño Tableta: */
+    .col-m-1 {width: 8.33%;}
+    .col-m-2 {width: 16.66%;}
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+
+    div.navegacion {
+        position: absolute;
+    }
+    a span {
+        display: none;
+    }
+    .site-logo img{
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 150px;
+    }
+    ul.verticalnav, ul.horizontalnav{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: fit-content;
+        background-color: #f1f1f1;
+        position: static;
+        height: fit-content;
+        overflow: auto;
+    }
+    ul.verticalnav li, ul.horizontalnav li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        float: none;
+    }
+    ul.verticalnav li a, ul.horizontalnav li a {
+        text-decoration: none;
+        color: #000;
+        padding: 8px;
+        text-align: center;
+        display: block;
+    }
+    div.content-v, div.content-h {
+        margin-left: 10%;
+        padding: 1px 16px;
+        height: 100%;
+    }
+}
+@media only screen and (min-width: 800px) {
+    /* Tamaño Normal: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+    /***********************************menu vertical******************************/
+    ul.verticalnav { /*todos los ul con la clase verticalnav*/
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 25%;
+        background-color: #f1f1f1;
+        position: absolute;
+        height: 100%;
+        overflow: auto;
+    }
+
+    ul.verticalnav li { /*todos los ul con la clase verticalnav*/
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        float: none;
+    }
+
+    /*
+    elemento <a> dentro de la lista con clase verticalnav en <ul>
+    es decir los botones como Inicio, Item 1, Item 2...
+    */
+    ul.verticalnav li a { /*todos los <a> dentro de un <li> que estan dentro de un <ul> con clase = verticalnav*/
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+    }
+
+    /*
+    si el elemento <a> dentro de una lista con clase verticalnav de un <ul> está activo
+    es decir se está en la página donde apunta el <a>
+    (Por ejemplo si estamos en la página inicial, el boton Inicio se verá diferente)
+    */
+    ul.verticalnav li a.active { /*todos los a con clase active, dentro de un li que esten dentro de un ul con clase verticalnav*/
+        background-color: cadetblue;
+        color: white;
+    }
+
+    ul.verticalnav li a:hover:not(.active) { /*todos los <a> a quienes se le hace hover y que no tienen la clase active dentro de un li que estan dentro de un ul con la clase verticalnav*/
+        background-color: #555;
+        color: white;
+    }
+
+    ul.verticalnav li a:hover{ /*todos los <a> a quienes se les hace hover, dentro de un li que estan en un ul con clase verticalnav*/
+        background-color: darkseagreen;
+        color: white;
+    }
+
+    ul.verticalnav .sub-menu{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul.verticalnav .sub-elemento{ /*todos las etiquetas con la clase = sub-elemento*/
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: darkseagreen;
+        color: black;
+        opacity: 0.8;
+        position: relative;
+        display: none;
+    }
+
+    ul.verticalnav .sub-menu:hover .sub-elemento{ /*todos los tags que tienen la clase = sub-elemento que están en un li al que se le está haciendo hover*/
+        display:block;
+        height: fit-content;
+        position: static;
+    }
+
+    div.content-v { /*todos los div con la clase = content*/
+        margin-left: 25%;
+        padding: 1px 16px;
+        height: 100%;
+    }
+
+    /************************************menu horizontal***************************/
+    ul.horizontalnav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: #f1f1f1;
+        overflow: auto;
+    }
+
+    ul.horizontalnav li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0; 
+        float: left;
+    }
+
+    ul.horizontalnav li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+    }
+
+    ul.horizontalnav li a.active {
+        background-color: cadetblue;
+        color: white;   
+    }
+
+    ul.horizontalnav li a:hover:not(.active) {
+        background-color: #555;
+        color: white;
+    }
+
+    ul.horizontalnav li a:hover{
+        background-color: darkseagreen;
+        color: white;
+    }
+
+    ul.horizontalnav .sub-menu{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    ul.horizontalnav .sub-elemento{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: darkseagreen;
+        color: black;
+        opacity: 0.8;
+        overflow: hidden;
+        display: none;
+    }
+
+    ul.horizontalnav .sub-menu:hover .sub-elemento{
+        display:block;
+        height: fit-content;
+        position: absolute;
+        z-index: 100;
+    }
+
+    div.content-h {
+        margin-left: 0%;
+        padding: 1px 16px;
+        height: 100%;
+    }
+
+    .site-logo{
+        overflow: auto;
+    }
+
+    .site-logo img{
+        width:12.5%;
+        height:50px;
+        float: left;
+        clear: both;
+    }
+}
+/******************************************************************************/
+/*
+tamaños de pantalla:
+Normal: desde 1024px para arriba;
+Tableta: desde 600px hasta 900px;
+Celular: desde el mas pequeño hasta 600px;
+*/
+/******************************************************************************/
