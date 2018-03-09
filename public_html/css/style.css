@@ -2,6 +2,12 @@
 * Hoja de estilos
 * Cristhian Coronel
 */
+/*
+tamaños de pantalla:
+Normal: desde 1024px para arriba;
+Tableta: desde 600px hasta 900px;
+Celular: desde el mas pequeño hasta 600px;
+*/
 /*****************************opciones inicales********************************/
 
 /*
@@ -76,15 +82,14 @@ a span {
     display: block;
     text-align: center;
 }
-
-div.content-v img, div.content-h img {
+[class*="content-"] img {
     max-width: 40%;
     height: auto;
 }
 
 /***************************tamaño normal**************************************/
 
-/***********************************menu vertical******************************/
+/*menu vertical*/
 ul.verticalnav { /*todos los ul con la clase verticalnav*/
     list-style-type: none;
     margin: 0;
@@ -96,8 +101,7 @@ ul.verticalnav { /*todos los ul con la clase verticalnav*/
     overflow: auto;
 }
 
-ul.verticalnav li { /*todos los ul con la clase verticalnav*/
-    list-style-type: none;
+ul.verticalnav li { /*todos il dentro de los ul con clase verticalnav*/
     margin: 0;
     padding: 0;
     float: none;
@@ -135,7 +139,6 @@ ul.verticalnav li a:hover{ /*todos los <a> a quienes se les hace hover, dentro d
 }
 
 ul.verticalnav .sub-menu{
-    list-style-type: none;
     margin: 0;
     padding: 0;
 }
@@ -163,7 +166,7 @@ div.content-v { /*todos los div con la clase = content*/
     height: 100%;
 }
 
-/************************************menu horizontal***************************/
+/*menu horizontal*/
 ul.horizontalnav {
     list-style-type: none;
     margin: 0;
@@ -320,12 +323,3 @@ div.content-h {
     }
     
 }
-
-/******************************************************************************/
-/*
-tamaños de pantalla:
-Normal: desde 1024px para arriba;
-Tableta: desde 600px hasta 900px;
-Celular: desde el mas pequeño hasta 600px;
-*/
-/******************************************************************************/
