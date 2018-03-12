@@ -8,21 +8,21 @@ Modificado por Cristhian C.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=www.mtess.gov.py/"/>
-        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link id="cssLink" href="css/style.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
         <script src="js/js.js" type="text/javascript"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body style="color: #8c8c8c;" onload="config()">
         <div class="encabezado col-m-12 col-12">
-            <img title="Logo" src="img/dpIcon.png" alt="logo">
+            <img title="Logo" src="https://image.freepik.com/vector-gratis/plantilla-de-logo-abstracto_1331-33.jpg" alt="logo">
             <h1 style="margin: 0; padding: 0">Titulo del trabajo</h1>            
         </div>
         <div id="nav" class="navegacion col-m-1 col-3"><!--Contenedor de los menus de navegacion-->
-            <div class="menu reorder">
+            <div id="menuX" class="menu reorder">
                 <a id="menuBtn" title="Menu" href="#home" class="active fa fa-outdent" onclick="colapsarMenu(this)"><span> Logo de la universidad</span></a>
                 <div class="sub-menu ">
-                    <a title="X" href="#X" class="fa fa-gamepad" onclick="dropdown(this)"><span> Facultad X</span></a>
+                    <a title="X" href="#X" class="fa fa-balance-scale" onclick="dropdown(this)"><span> Facultad X</span></a>
                     <div class="sub-elemento">
                         <a href="#subX">Materias x</a>
                         <a href="#subX">Matriculas x</a>
@@ -30,13 +30,31 @@ Modificado por Cristhian C.
                     </div>
                 </div>
             </div>
-            <div class="menu reorder">
+            <div id="menuY" class="menu reorder">
                 <div class="sub-menu">
-                    <a title="Y" href="#Y" class="fa fa-video-camera" onclick="dropdown(this)"><span> Facultad Y</span></a>
+                    <a title="Y" href="#Y" class="fa fa-tree" onclick="dropdown(this)"><span> Facultad Y</span></a>
                     <div class="sub-elemento" style="top: 0%">
                         <a href="#subY">Materias y</a>
                         <a href="#subY">Matriculas y</a>
                         <a href="#subY">Cuotas y</a>
+                    </div>
+                </div>
+            </div>
+            <div id="menuSelect" class="menu reorder">
+                <div class="sub-menu">
+                    <a title="Y" href="#Y" class="fa fa-reorder" onclick="dropdown(this)"><span> Sitios</span></a>
+                    <div class="sub-elemento" style="top: 0%">
+                        <a href="#" class="active">Universidad</a>
+                        <a href="menu.html">Menú</a>
+                    </div>
+                </div>
+            </div>
+            <div id="opciones" class="menu reorder">
+                <div class="sub-menu">
+                    <a title="Opciones" href="#Y" class="fa fa-gears" onclick="dropdown(this)"><span> Configuraciones</span></a>
+                    <div class="sub-elemento" style="top: 0%">
+                        <a id="optVertical" href="#opt1" class="active">Menu vertical</a>
+                        <a id="optHorizontal" href="#opt2" class="">Menu horizontal</a>
                     </div>
                 </div>
             </div>

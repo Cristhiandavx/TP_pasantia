@@ -86,6 +86,9 @@ div.footer {
     border: 2px solid;
     float: left;
 }
+#opciones {
+    display: none;
+}
 @media only screen and (min-width: 600px) {
     /* Tamaño Tableta: */
     .col-m-1 {width: 8.33%;}
@@ -130,6 +133,7 @@ div.footer {
 }
 @media only screen and (min-width: 800px) {
     /* Tamaño Normal: */
+    /*menu vertical*/
     .col-1 {width: 8.33%;}
     .col-2 {width: 16.66%;}
     .col-3 {width: 25%;}
@@ -161,5 +165,12 @@ div.footer {
     div.side {
         position: static;
         border: 2px solid;
+    }
+    #opciones {
+        display: inherit;
+    }
+    /*menu horizontal*/
+    div.navegacion.h {
+        
     }
 }

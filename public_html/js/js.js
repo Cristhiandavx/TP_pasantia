@@ -43,21 +43,34 @@ function dropdown(a) {
     //console.log(a.nextElementSibling);
     a.nextElementSibling.classList.toggle("show");
 }
+//JQuery
 $(window).resize(function () {
     var viewportWidth = $(window).width();
     if (viewportWidth < 784) {
-        if(sessionStorage.getItem("menu") !== "colapsado"){
+        if (sessionStorage.getItem("menu") !== "colapsado") {
             $("#menuBtn").removeClass("fa-outdent");
         } else {
             $("#menuBtn").removeClass("fa-indent");
         }
-        $("#menuBtn").addClass("fa-medium");
+        $("#menuBtn").addClass("fa-institution");
     } else {
-        $("#menuBtn").removeClass("fa-medium");
-        if (sessionStorage.getItem("menu") === "colapsado"){
+        $("#menuBtn").removeClass("fa-institution");
+        if (sessionStorage.getItem("menu") === "colapsado") {
             $("#menuBtn").addClass("fa-indent");
         } else {
             $("#menuBtn").addClass("fa-outdent");
         }
     }
+});
+$(document).ready(function(){
+    $("#optVertical").on("click", function(){
+        $("#optHorizontal").removeClass("active");
+        $("#nav").removeClass("h");
+        $(this).addClass("active");
+    });
+    $("#optHorizontal").on("click", function(){
+        $("#nav").addClass("h");
+        $("#optVertical").removeClass("active");
+        $(this).addClass("active");
+    });
 });
