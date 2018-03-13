@@ -12,12 +12,11 @@ Celular: desde el mas pequeño hasta 600px;
 }
 div.encabezado{
     background-color: beige;
-    text-align:center;
     margin: 0px;
     padding: 0px;
-    float: right;
+    text-align: center;
 }
-div.encabezado img {
+div.encabezado div img.logo {
     max-width: 100%;
     max-height: 2.5cm;
 }
@@ -106,6 +105,10 @@ div.footer {
 
     div.navegacion.col-m-1{
         width: 2cm;
+    }
+    div.footer.col-m-11{
+        width: 75%;
+        float: left;
     }
     div.navegacion {
         height: 1000px;
