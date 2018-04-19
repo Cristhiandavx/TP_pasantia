@@ -4,7 +4,7 @@ Modificado por Cristhian C.
 -->
 <html>
     <head>
-        <title>|Trabajo práctico| - Menú</title>
+        <title>|Trabajo práctico|</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=www.mtess.gov.py/"/>
@@ -14,29 +14,36 @@ Modificado por Cristhian C.
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body style="color: #8c8c8c;" onload="config()">
-        <div class="encabezado col-m-12 col-12">
-            <img title="Logo" src="img/dpIcon.png" alt="logo">
-            <h1 style="margin: 0; padding: 0">Menú del trabajo</h1>            
+        <div class="encabezado ">
+            <div id="logoImg" class="logoImage col-m-3 col-3">
+                <img class="logo" title="Logo" src="https://image.freepik.com/vector-gratis/plantilla-de-logo-abstracto_1331-33.jpg" alt="logo">
+            </div>
+            <div id="logoTitle" class="logoTitle col-m-9 col-9">
+                <h1 style="margin: 0; padding: 0">Titulo del trabajo</h1>
+            </div>
+            <div id="logoDesc" class="logoDesc">
+                Slogan...
+            </div>
         </div>
         <div id="nav" class="navegacion col-m-1 col-3"><!--Contenedor de los menus de navegacion-->
-            <div class="menu reorder">
-                <a id="menuBtn" title="Menu" href="#home" class="active fa fa-outdent" onclick="colapsarMenu(this)"><span> Titulo del menu</span></a>
+            <div id="menuX" class="menu reorder">
+                <a id="menuBtn" title="Inicio" href="#index.html" class="active fa fa-outdent" onclick="colapsarMenu(this)"><span> Logo de la universidad</span></a>
                 <div class="sub-menu ">
-                    <a title="X" href="#X" class="fa fa-gamepad" onclick="dropdown(this)"><span> Desafio X</span></a>
+                    <a title="X" href="#X" class="fa fa-balance-scale" onclick="dropdown(this)"><span> Facultad X</span></a>
                     <div class="sub-elemento">
-                        <a href="#subX">Desafio x</a>
-                        <a href="#subX">Desafio x</a>
-                        <a href="#subX">Desafio x</a>
+                        <a href="#subX">Materias x</a>
+                        <a href="#subX">Matriculas x</a>
+                        <a href="#subX">Cuotas x</a>
                     </div>
                 </div>
             </div>
-            <div class="menu reorder">
+            <div id="menuY" class="menu reorder">
                 <div class="sub-menu">
-                    <a title="Y" href="#Y" class="fa fa-video-camera" onclick="dropdown(this)"><span> Anecdotas Y</span></a>
+                    <a title="Y" href="#Y" class="fa fa-tree" onclick="dropdown(this)"><span> Facultad Y</span></a>
                     <div class="sub-elemento" style="top: 0%">
-                        <a href="#subY">Anecdotas y</a>
-                        <a href="#subY">Anecdotas y</a>
-                        <a href="#subY">Anecdotas y</a>
+                        <a href="#subY">Materias y</a>
+                        <a href="#subY">Matriculas y</a>
+                        <a href="#subY">Cuotas y</a>
                     </div>
                 </div>
             </div>
@@ -44,8 +51,18 @@ Modificado por Cristhian C.
                 <div class="sub-menu">
                     <a title="Y" href="#Y" class="fa fa-reorder" onclick="dropdown(this)"><span> Sitios</span></a>
                     <div class="sub-elemento" style="top: 0%">
-                        <a href="index.html">Universidad</a>
-                        <a href="#" class="active">Menú</a>
+                        <a href="index.html">Menú principal</a>
+                        <a href="abstractpage.html">Página hecha sin Bootstrap 4</a>
+                        <a href="bootstrap4page.html">Página hecha con Bootstrap 4</a>
+                    </div>
+                </div>
+            </div>
+            <div id="opciones" class="menu reorder">
+                <div class="sub-menu">
+                    <a title="Opciones" href="#Y" class="fa fa-gears" onclick="dropdown(this)"><span> Configuraciones</span></a>
+                    <div class="sub-elemento" style="top: 0%">
+                        <a id="optVertical" href="#opt1" class="active">Menu vertical</a>
+                        <a id="optHorizontal" href="#opt2" class="">Menu horizontal</a>
                     </div>
                 </div>
             </div>
@@ -60,7 +77,7 @@ Modificado por Cristhian C.
         <div id="contenido" class="col-9">
             <img src="img/dpIcon.png" alt="Image" title="Image reference">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Esta página está hecha con estilos en CSS y funciones en JavaScript.
             </p>
             <p>
                 Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.

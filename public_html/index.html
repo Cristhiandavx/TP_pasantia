@@ -1,100 +1,161 @@
 <!DOCTYPE html>
 <!--
-Modificado por Cristhian C.
+Proyecto de sitio web responsivo, con funciones y características de Bootstrap4, Jquery y Javascript
+Funcionalidad de formulario con IndexedDB
+**https://github.com/Cristhiandavx/CristhiandavxExampleWebProject
+*Hecho por: Cristhian Coronel
+**cristhiancoro@gmail.com
+**https://github.com/Cristhiandavx
 -->
 <html>
     <head>
-        <title>|Trabajo práctico|</title>
+        <title>|Trabajo Práctico|</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=www.mtess.gov.py/"/>
-        <link href="css/style.css" rel="stylesheet" type="text/css"/>
-        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-        <script src="js/js.js" type="text/javascript"></script>
+        <link rel="icon" type="image/png" href="img/dpIcon.png"/>
+        <!-- =========================================================================================== -->
+        <!-- Bootstrap 4 CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <!-- =========================================================================================== -->
+        <!-- Otros estilos -->
+        <!-- Font Awesome CDN -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- =========================================================================================== -->
+        <!-- Otros scripts -->
+        <!-- =========================================================================================== -->
+        <!-- Mi hoja de estilos -->
+        <link href="css/css.css" rel="stylesheet" type="text/css"/>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <!-- =========================================================================================== -->
+        <!-- Mis scripts en JavaScript -->
+        <script src="js/js.js" type="text/javascript"></script>
+        <script src="js/indexedDB.js" type="text/javascript"></script>
+        <!-- =========================================================================================== -->
     </head>
-    <body style="color: #8c8c8c;" onload="config()">
-        <div class="encabezado ">
-            <div id="logoImg" class="logoImage col-m-3 col-3">
-                <img class="logo" title="Logo" src="https://image.freepik.com/vector-gratis/plantilla-de-logo-abstracto_1331-33.jpg" alt="logo">
+    <body>
+        <!-- Encabezado que se ve estando en cualquier modo -->
+        <div id="encabezado" class="encabezado row no-gutters">
+            <div id="encabezadoImg" class="col-sm-2">
+                <img id="logo" class="img-fluid" style="max-height: 3cm;" title="Logo" src="img/dpIcon.png" alt="logo">
             </div>
-            <div id="logoTitle" class="logoTitle col-m-9 col-9">
-                <h1 style="margin: 0; padding: 0">Titulo del trabajo</h1>
-            </div>
-            <div id="logoDesc" class="logoDesc">
-                Slogan...
+            <div id="encabezadoTitle" class="col-sm-10">
+                <h1>Titulo del trabajo</h1>
+                <div id="encabezadoDesc" class="text-center">Slogan...</div>
             </div>
         </div>
-        <div id="nav" class="navegacion col-m-1 col-3"><!--Contenedor de los menus de navegacion-->
-            <div id="menuX" class="menu reorder">
-                <a id="menuBtn" title="Inicio" href="#index.html" class="active fa fa-outdent" onclick="colapsarMenu(this)"><span> Logo de la universidad</span></a>
-                <div class="sub-menu ">
-                    <a title="X" href="#X" class="fa fa-balance-scale" onclick="dropdown(this)"><span> Facultad X</span></a>
-                    <div class="sub-elemento">
-                        <a href="#subX">Materias x</a>
-                        <a href="#subX">Matriculas x</a>
-                        <a href="#subX">Cuotas x</a>
+        <!-- primer grupo (horizontal) -->
+        <div id="horizontal-group" class="d-md-none d-lg-flex flex-column">
+            <nav id="horizontal-nav" class="navbar navbar-expand-sm navbar-light bg-custom-a">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="nav" class="collapse navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#"><span class="fa fa-institution"> </span><span class="etiqueta"> Inicio</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><span class="fa fa-building"> </span><span class="etiqueta"> Facultades</span></a>
+                        </li>
+                        <li class="nav-item dropdown"><!--Dropdown con listas UL-->
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-balance-scale"> </span><span class="etiqueta"> Navegar</span></a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown1">
+                                <li><a class="dropdown-item" href="abstractpage.html">Ejemplo de sitio sin bootstrap</a></li>
+                                <li><a class="dropdown-item" href="bootstrap4page.html">Ejemplo de sitio con bootstrap4</a></li>
+                                <li><a class="dropdown-item" href="#">Principal</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown"><!--Dropdown con listas UL-->
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-balance-scale"> </span><span class="etiqueta"> Facultad X</span></a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown2">
+                                <li><a class="dropdown-item" href="#">Materias x</a></li>
+                                <li><a class="dropdown-item" href="#">Matriculas x</a></li>
+                                <li><a class="dropdown-item" href="#">Cursos x</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown"><!--Dropdown con DIVs-->
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-tree"> </span><span class="etiqueta"> Facultad Y</span></a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown3">
+                                <a class="dropdown-item" href="#">Materias y</a>
+                                <a class="dropdown-item" href="#">Matriculas y</a>
+                                <a class="dropdown-item" href="#">Cursos y</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="registros.html"><span class="fa fa-pencil-square-o"> </span><span class="etiqueta"> Registros</span></a>
+                        </li>
+                    </ul>
+                    <div class="navbar-nav flex-row ml-auto d-none d-md-block"><!--Navbar con DIVs solamente (sin UL) y ordenado a la derecha-->
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-gears"> </span><span class="etiqueta"> Configuraciones</span></a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown4">
+                                <a id="configMenu-V" class="dropdown-item" href="#"><span id="menuOpt-V">Vertical</span></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="menuY" class="menu reorder">
-                <div class="sub-menu">
-                    <a title="Y" href="#Y" class="fa fa-tree" onclick="dropdown(this)"><span> Facultad Y</span></a>
-                    <div class="sub-elemento" style="top: 0%">
-                        <a href="#subY">Materias y</a>
-                        <a href="#subY">Matriculas y</a>
-                        <a href="#subY">Cuotas y</a>
+            </nav>
+        </div>
+        <!-- segundo grupo (vertical) -->
+        <div id="vertical-group" class="row">
+            <nav id="vertical-nav" class="vertical-nav-default col-md-3 d-none d-md-block d-lg-none bg-custom-b p-0">
+                <a class="nav-link" href="#"><span class="fa fa-institution"> </span><span class="d-md-none"> Inicio</span></a>
+                <div class="nav-item dropright">
+                    <a class=" nav-link dropdown-toggle" href="#" id="dropright1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-times-rectangle"> </span><span class="etiqueta d-md-none"> Navegar-v</span></a>
+                    <div class="dropdown-menu" aria-labelledby="dropright1">
+                        <a class="dropdown-item" href="abstractpage.html">Ejemplo de sitio sin bootstrap-v</a>
+                        <a class="dropdown-item" href="bootstrap4page.html">Ejemplo de sitio con bootstrap4-v</a>
+                        <a class="dropdown-item" href="#">Principal-v</a>
                     </div>
                 </div>
-            </div>
-            <div id="menuSelect" class="menu reorder">
-                <div class="sub-menu">
-                    <a title="Y" href="#Y" class="fa fa-reorder" onclick="dropdown(this)"><span> Sitios</span></a>
-                    <div class="sub-elemento" style="top: 0%">
-                        <a href="#" class="active">Universidad</a>
-                        <a href="menu.html">Menú</a>
-                        <a href="paginaprinc.html">Página hecha con Bootstrap 4</a>
+                <div class="nav-item dropright">
+                    <a class=" nav-link dropdown-toggle" href="#" id="dropright2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-times-rectangle"> </span><span class="etiqueta d-md-none"> Facultad X-v</span></a>
+                    <div class="dropdown-menu" aria-labelledby="dropright2">
+                        <a class="dropdown-item" href="#">Materias x-v</a>
+                        <a class="dropdown-item" href="#">Matriculas x-v</a>
+                        <a class="dropdown-item" href="#">Cursos x-v</a>
                     </div>
                 </div>
-            </div>
-            <div id="opciones" class="menu reorder">
-                <div class="sub-menu">
-                    <a title="Opciones" href="#Y" class="fa fa-gears" onclick="dropdown(this)"><span> Configuraciones</span></a>
-                    <div class="sub-elemento" style="top: 0%">
-                        <a id="optVertical" href="#opt1" class="active">Menu vertical</a>
-                        <a id="optHorizontal" href="#opt2" class="">Menu horizontal</a>
+                <div class="nav-item dropright">
+                    <a class=" nav-link dropdown-toggle" href="#" id="dropright3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-angellist"> </span><span class="etiqueta d-md-none"> Facultad Y-v</span></a>
+                    <div class="dropdown-menu" aria-labelledby="dropright3">
+                        <a class="dropdown-item" href="#">Materias y-v</a>
+                        <a class="dropdown-item" href="#">Matriculas y-v</a>
+                        <a class="dropdown-item" href="#">Cursos y-v</a>
                     </div>
                 </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="registros.html"><span class="fa fa-pencil-square-o"> </span><span class="etiqueta d-md-none"> Registros</span></a>
+                </div>
+                <div class="nav-item dropright d-md-none d-lg-block">
+                    <a class=" nav-link dropdown-toggle" href="#" id="dropright4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-gears"> </span><span class="etiqueta d-md-none"> Opciones de menú</span></a>
+                    <div class="dropdown-menu" aria-labelledby="dropright4">
+                        <a id="configMenu-H" class="dropdown-item" href="#"><span id="menuOpt-H">Horizontal</span></a>
+                        <a id="configIcon-C" class="dropdown-item d-none" href="#"><span id="iconOpt-C">Compactar</span></a>
+                        <a id="configIcon-E" class="dropdown-item " href="#"><span id="iconOpt-E">Expandir</span></a>
+                    </div>
+                </div>
+            </nav>
+            <div id="content" class="col-md-9 col-lg-10">
+                <h1>Contenido</h1>
+                <p>contenido</p>
+                <p>contenido</p>
+                <p class="text-center">contenido centrado</p>
+                <p class="text-right">contenido alineado a la derecha</p>
+                <p class="border">contenido con border</p>
+            </div>
+            <div id="side" class="col-md-1 col-lg-2 ml-auto bg-info">
+                <p >Side bar</p>
             </div>
         </div>
-        <div class="side col-m-2 col-3">
-            <h3>SIDE</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-
+        <div id="footer" class="bg-success">
+            <p>foot</p>
         </div>
-        <div id="contenido" class="col-9">
-            <img src="img/dpIcon.png" alt="Image" title="Image reference">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <p>
-                Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.
-            </p>
-            <p>
-                Fusce convallis, mauris imperdiet gravida bibendum, nisl turpis suscipit mauris, sed placerat ipsum urna sed risus. In convallis tellus a mauris. Curabitur non elit ut libero tristique sodales. Mauris a lacus. Donec mattis semper leo. In hac habitasse platea dictumst. Vivamus facilisis diam at odio. Mauris dictum, nisi eget consequat elementum, lacus ligula molestie metus, non feugiat orci magna ac sem. Donec turpis. Donec vitae metus. Morbi tristique neque eu mauris. Quisque gravida ipsum non sapien. Proin turpis lacus, scelerisque vitae, elementum at, lobortis ac, quam. Aliquam dictum eleifend risus. In hac habitasse platea dictumst. Etiam sit amet diam. Suspendisse odio. Suspendisse nunc. In semper bibendum libero.
-            </p>
-        </div>
-        
-        <div id="footer" class="footer col-m-9 col-9">
-            <h2 style="margin: 2px; padding: 0px;">FOOTER</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </div>
-        <noscript>
-        Your browser does not support JavaScript - Su navegador no soporta JavaScript
-        </noscript>
     </body>
 </html>
