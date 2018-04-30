@@ -39,8 +39,10 @@ function startDB() {
         console.log("Database loaded successfuly");
         console.log("DB name: " + dataBase.result.name);
         console.log("DB version: " + dataBase.result.version);
-        console.log("Actual Object Store Name: " + dataBase.result.name);
-        document.querySelector("#db_objectsName").innerHTML = "Nombre de la tabla: " + dataBase.result.name;
+        console.log("Object Stores in this DB: ");
+        console.log(dataBase.result.objectStoreNames);
+        console.log("---------*---------");
+        document.querySelector("#db_objectsName").innerHTML = "Nombre de la tabla: " + dataBase.result.transaction(["alumnos"], "readwrite").objectStore("alumnos").name;
     };
     dataBase.onerror = function (e) {//Se ejecutará cuando falle el open()… ya sea por un fallo en la apertura en sí como por algún error en el método onupgradeneeded.
         console.log("Database not loaded");
